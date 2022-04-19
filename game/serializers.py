@@ -113,5 +113,6 @@ class GameSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         input_code = validated_data.pop('code', None)
+        winned = validated_data.pop('winned', None)
         game = models.Game.objects.create(code=createcode(), winned=False, **validated_data)
         return game
