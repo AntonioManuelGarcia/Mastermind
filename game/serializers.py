@@ -32,6 +32,8 @@ def checkguestformat(guest):
     try:
         if len(guest) == 4 and checkvalidguest(guest):
             return True
+        else:
+            return False
     except Exception:
         return False
 
