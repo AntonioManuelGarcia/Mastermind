@@ -109,6 +109,68 @@ docker-compose build
 docker-compose run --rm app django-admin startproject core .
 docker-compose up
 ```
+
+## Test y cobertura
+
+Para lanzar los test basta con lanzarlos con el comando test de django, y si queremos 
+acelerar la ejecución podemos usar la opcion de --parallel para ejecutarlos en paralelo.
+
+```
+python .\manage.py test --parallel
+```
+
+para comprobar la cobertura usamos la herramienta coverage para obtener el informe 
+de cobertura.
+
+```
+coverage erase
+coverage run .\manage.py test
+coverage report
+```
+Opcionalmente podemos guardar el informe en un fichero con el siguiente comando.
+```
+coverage report > coverage.txt
+```
+
+### informe de cobertura actual
+```
+Name                                                             Stmts   Miss  Cover
+------------------------------------------------------------------------------------
+commons\renderers.py                                                13      3    77%
+commons\views.py                                                    24      5    79%
+game\__init__.py                                                     0      0   100%
+game\admin.py                                                        5      0   100%
+game\apps.py                                                         4      0   100%
+game\migrations\0001_initial.py                                      7      0   100%
+game\migrations\0002_auto_20220418_2114.py                           6      0   100%
+game\migrations\0003_auto_20220418_2151.py                           4      0   100%
+game\migrations\0004_auto_20220418_2220.py                           4      0   100%
+game\migrations\0005_game_winned.py                                  4      0   100%
+game\migrations\0006_rename_blank_result_guest_black_result.py       4      0   100%
+game\migrations\__init__.py                                          0      0   100%
+game\models.py                                                      20      0   100%
+game\serializers.py                                                 92      1    99%
+game\tests.py                                                      209      0   100%
+game\urls.py                                                        10      0   100%
+game\views.py                                                       31      0   100%
+manage.py                                                           12      2    83%
+mastermind\__init__.py                                               0      0   100%
+mastermind\settings.py                                              31      0   100%
+mastermind\urls.py                                                  13      0   100%
+users\__init__.py                                                    0      0   100%
+users\admin.py                                                       3      0   100%
+users\apps.py                                                        4      0   100%
+users\migrations\0001_initial.py                                     7      0   100%
+users\migrations\__init__.py                                         0      0   100%
+users\models.py                                                     12      1    92%
+users\serializers.py                                                32      6    81%
+users\tests.py                                                      28      0   100%
+users\urls.py                                                        8      0   100%
+users\views.py                                                      51      7    86%
+------------------------------------------------------------------------------------
+TOTAL                                                              638     25    96%
+```
+
 ## Questionario
 
 - What is your favorite package manager and why?
