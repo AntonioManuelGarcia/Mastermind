@@ -12,6 +12,7 @@ class BoardGame(DDDModel):
     repository = BoardGameRepository  # have to set it as class attribute, no control when model gets instantiated
     objects = BoardGameManager()
 
+
 class Game(DDDModel):
     user = models.ForeignKey(
       settings.AUTH_USER_MODEL,
