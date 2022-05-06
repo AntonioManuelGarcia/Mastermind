@@ -61,13 +61,12 @@ def checkwhites(guest, code):
 
 #
 # def checktocreateguest(kwargs):
-#     print('check')
+
 #     input_code = kwargs.get('guest_code', None)
 #     white_result = kwargs.pop('white_result', None)
 #     black_result = kwargs.pop('black_result', None)
 #     game = kwargs.get('game', None)
 #     code = game.code
-#     print(game)
 #     if game.winned:
 #         raise serializers.ValidationError("Game winned by the user, you can't continue playing.")
 #     if game.finished:

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . import models
 from rest_framework.validators import UniqueValidator
-#from commons.logic import *
+from commons.logic import *
 
 
 class BoardGameSerializer(serializers.ModelSerializer):
@@ -16,8 +16,6 @@ class GuestSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     # def create(self, validated_data):
-    #     print('kwargs')
-    #     print(validated_data)
     #     try:
     #         return checktocreateguest(validated_data)
     #     except Exception as err:
